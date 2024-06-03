@@ -13,7 +13,7 @@ development:
 test:
   <<: *default
   database: questory_api_test
-.
+
 production:
   <<: *default
   database: questory_api_production
