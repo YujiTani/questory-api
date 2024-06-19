@@ -12,7 +12,7 @@ http {
 
       location / {
           proxy_pass http://$API_HOST:$API_PORT;
-          proxy_set_header Host $host;
+      #   proxy_set_header Host $host;
       }
 
       # TODO: フロント側への分岐も追加
