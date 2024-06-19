@@ -23,7 +23,9 @@ http {
 
       error_page   500 502 503 504  /50x.html;
       location = /50x.html {
-          root   /var/www/html;
+          alias   /var/www/html;
+          # 外部から直接アクセスすることはできないようにする指定
+          internal;
       }
   }
 }
