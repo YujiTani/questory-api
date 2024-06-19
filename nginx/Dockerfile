@@ -6,6 +6,8 @@ RUN apk --no-cache add libintl && \
   cp /usr/bin/envsubst /usr/local/bin/envsubst && \
   apk del .gettext
 
+RUN apk --no-cache add vim
+
 # nginx.conf.templateをコピー
 COPY /nginx/nginx.conf.template /etc/nginx/
 
