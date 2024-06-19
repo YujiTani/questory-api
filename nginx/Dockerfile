@@ -6,5 +6,11 @@ RUN apk --no-cache add libintl && \
   cp /usr/bin/envsubst /usr/local/bin/envsubst && \
   apk del .gettext
 
+# nginx.conf.templateをコピー
 COPY /nginx/nginx.conf.template /etc/nginx/
+
+# ホストマシンの静的ファイルをコンテナのドキュメントルートにコピー
+COPY ./static/50x.html /var/www/html/50x.html
+COPY ./static/image /var/www/html/image
+
 CMD /bin/sh -c "envsubst < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf && nginx -g 'daemon off;'"
