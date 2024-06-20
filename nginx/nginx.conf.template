@@ -23,8 +23,10 @@ http {
 
       error_page   500 502 503 504  /50x.html;
       location = /50x.html {
-          alias   /var/www/html;
+        # FIXME: rootに修正する
+          root	/var/www/html;
           # 外部から直接アクセスすることはできないようにする指定
+          # localで表示できるのか確認する
           internal;
       }
   }
